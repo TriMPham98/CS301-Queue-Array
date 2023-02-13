@@ -61,7 +61,11 @@ void Queue<T>::Enqueue(T newItem)
 // Post: If (queue is not full) newItem is at the rear of the queue;
 //       otherwise a FullQueue exception is thrown.  
 {
-
+    if (IsFull()) {
+        throw FullQueue();
+    }
+    rear = (rear + 1) % maxQue;
+    items[rear] = newItem;
 }
 
 template<class T>

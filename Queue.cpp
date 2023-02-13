@@ -74,5 +74,13 @@ T Queue<T>::Dequeue()
 //       removed and a copy returned in item; 
 //       otherwise a EmptyQueue exception has been thrown.
 {
+    if (IsEmpty()) {
+        throw EmptyQueue();
+    }
 
+    T dequeuedItem = items[front];
+    front = (front + 1) % maxQue;
+    numItems--;
+
+    return dequeuedItem;
 }

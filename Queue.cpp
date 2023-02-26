@@ -46,14 +46,14 @@ template<class T>
 bool Queue<T>::IsEmpty() const
 // Returns true if the queue is empty; false otherwise.
 {
-    return false;
+    return numItems == 0;
 }
 
 template<class T>
 bool Queue<T>::IsFull() const
 // Returns true if the queue is full; false otherwise.
 {
-    return false;
+    return numItems == maxQue;
 }
 
 template<class T>

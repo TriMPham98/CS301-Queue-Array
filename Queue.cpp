@@ -65,6 +65,7 @@ void Queue<T>::Enqueue(T newItem)
     }
     rear = (rear + 1) % maxQue;
     items[rear] = newItem;
+    numItems++;
 }
 
 template<class T>

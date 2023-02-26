@@ -1,5 +1,17 @@
 #include "Queue.h"
 
+template<class T>
+Queue<T>::Queue()          // Default class constructor
+// Post: maxQue, front, and rear have been initialized.
+//       The array to hold the queue elements has been dynamically
+//       allocated.
+{
+    numItems = 0;
+    maxQue = 500;
+    front = 0;
+    rear = maxQue - 1;
+    items = new T[maxQue];
+}
 
 template<class T>
 Queue<T>::Queue(int max)
@@ -10,19 +22,6 @@ Queue<T>::Queue(int max)
 {
     numItems = 0;
     maxQue = max;
-    front = 0;
-    rear = maxQue - 1;
-    items = new T[maxQue];
-}
-
-template<class T>
-Queue<T>::Queue()          // Default class constructor
-// Post: maxQue, front, and rear have been initialized.
-//       The array to hold the queue elements has been dynamically
-//       allocated.
-{
-    numItems = 0;
-    maxQue = 500;
     front = 0;
     rear = maxQue - 1;
     items = new T[maxQue];
